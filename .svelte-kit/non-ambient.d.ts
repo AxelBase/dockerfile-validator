@@ -47,6 +47,6 @@ declare module "$app/types" {
 		};
 		Pathname(): "/" | "/blog" | "/blog/" | "/blog/posts" | "/blog/posts/" | "/blog/posts/post1" | "/blog/posts/post1/" | "/blog/posts/post2" | "/blog/posts/post2/" | "/blog/posts/post3" | "/blog/posts/post3/" | "/blog/posts/post4" | "/blog/posts/post4/" | "/blog/posts/post5" | "/blog/posts/post5/" | "/blog/posts/post6" | "/blog/posts/post6/" | "/blog/posts/post7" | "/blog/posts/post7/" | "/privacy" | "/privacy/" | "/terms" | "/terms/";
 		ResolvedPathname(): `${"" | `/${string}`}${ReturnType<AppTypes['Pathname']>}`;
-		Asset(): "/.nojekyll" | "/AxelLab-Logo.ico" | "/robots.txt" | "/sitemap.xml" | string & {};
+		Asset(): "/.nojekyll" | "/AxelLab-Logo.ico" | "/google618c5ad541d5ebb5.html" | "/robots.txt" | "/sitemap.xml" | string & {};
 	}
 }
