@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>AxelBase – Dockerfile Syntax Validator</title>
+		<link rel="icon" href="../../AxelLab-Logo.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link href="../../_app/immutable/assets/0.D2goa7eI.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/7.BI3iXDzp.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.By4aftQ3.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/dmZfI2NX.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/JSsAqExA.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/COTc1eVh.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/DGd0bTLZ.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/COmin_7v.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.wvYwJYw7.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/DsnmJJEf.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/dbL-Cg0J.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/BNJALzHz.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.DqAqwQkH.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/B9hXjthg.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CgWPZEOT.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/7.D75x9ANI.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/DclLNup3.js"><!--[--><meta name="robots" content="index, follow"/> <meta name="description" content="Learn how to export Dockerfile validation results with AxelBase’s TXT/JSON feature."/><!--]--><title>Exporting Results (TXT/JSON) - AxelBase Blog</title>
+		<!-- BOOTSTRAP 5.3.3 CDN -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+			rel="stylesheet"
+		/>
+		<!-- CUSTOM APP STYLES are now imported in +layout.svelte -->
+	</head>
+	<body data-sveltekit-preload-data="hover" data-bs-theme="dark">
+		<div style="display: contents"><!--[--><!--[--><!----><div class="app-container"><header class="app-header"><div class="navbar-content"><div class="brand-container"><a href="../../" aria-label="Home"><img src="../../AxelLab-Logo.ico" alt="AxelBase Logo" class="brand-logo"/></a> <a class="brand-name" href="../../">AxelBase</a> <div class="bmac-container"><button class="bmac-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.35,22.2L12,22A10,10,0,0,1,2,12V10A2,2,0,0,1,4,8H7.2A5.13,5.13,0,0,1,12,3A5.13,5.13,0,0,1,16.8,8H20A2,2,0,0,1,22,10V12A10,10,0,0,1,12.35,22.2M4,10V12A8,8,0,0,0,12,20A8,8,0,0,0,20,12V10H16.8A5.11,5.11,0,0,1,12.5,5.12A5.15,5.15,0,0,1,7.2,10H4Z"></path></svg> Buy me a coffee</button> <!--[!--><!--]--></div></div> <nav><ul class="nav-links"><li><a class="nav-link" href="../../">Home</a></li> <li><a class="nav-link" href="../../#about">About</a></li> <li><a class="nav-link" href="../../#how-to-use">How to use</a></li> <li><a class="nav-link" href="../../#faq">FAQ</a></li> <li><a class="nav-link" href="../../blog">Blog</a></li></ul></nav></div></header> <main class="main-content"><!----><div class="container py-5 main-content"><h1 class="display-4 text-center mb-4">Exporting Results (TXT/JSON)</h1> <p class="lead text-secondary-text text-center mb-5">Maximize workflow efficiency with exportable validation reports.</p> <p>AxelBase’s export feature is a game-changer for developers, allowing the generation of TXT and JSON reports directly from validation results. After validating a Dockerfile, users can click the “Export” button to download a file named `AxelBase-Docker-File-Validation-Report`, with incremental suffixes like `-1`, `-2`, etc., for subsequent exports. This functionality is particularly valuable for archiving build histories, sharing with team members, or integrating into documentation processes, enhancing overall workflow efficiency.</p> <section class="mb-4"><h2 class="h4">Report Formats</h2> <p>AxelBase offers two export formats tailored to different needs:</p> <ul><li><strong>JSON</strong> — Ideal for automation, this format includes structured fields like timestamp, validation status, error/warning lists, line count, and the original Dockerfile content. It’s perfect for CI/CD pipelines or integration into developer tools.</li> <li><strong>TXT</strong> — Designed for readability, this version summarizes the validation results in plain text. It’s great for sharing with teammates or attaching to documentation.</li></ul> <p>Here’s a sample TXT report:</p> <pre><code>
+AxelBase Dockerfile Validation Report
+========================================
+Status: VALID
+Errors: 0
+Warnings: 0
+Lines: 5
+
+--- ERRORS ---
+None
+
+--- WARNINGS ---
+None
+  </code></pre></section> <h2 class="mt-4">Practical Use Cases</h2> <ul class="list-group"><li class="list-group-item bg-dark-surface border-custom svelte-led0iy">Share reports with quality assurance teams for review.</li> <li class="list-group-item bg-dark-surface border-custom svelte-led0iy">Archive files for long-term compliance tracking.</li> <li class="list-group-item bg-dark-surface border-custom svelte-led0iy">Incorporate into CI/CD pipelines for automated validation checks.</li> <li class="list-group-item bg-dark-surface border-custom svelte-led0iy">Use as evidence during code reviews or audits.</li></ul> <h2 class="mt-4">Implementation Details</h2> <p>The export mechanism leverages browser APIs like `Blob` and `URL.createObjectURL` to generate downloadable files. When a user selects JSON or TXT, AxelBase constructs the report based on the current validation state, ensuring accuracy. The incremental naming convention prevents overwriting previous exports, a feature refined based on user feedback to maintain file integrity. This attention to detail makes the export process seamless and reliable.</p> <p>By utilizing this feature, developers can streamline collaboration and documentation, turning validation results into actionable insights. Whether you’re preparing for a team handover or ensuring regulatory compliance, AxelBase’s export capability transforms raw data into a valuable resource, solidifying its role as an essential tool in the development toolkit.</p> <p class="mt-4"><a href="../../blog" class="btn btn-outline-primary">Back to Blog</a></p></div><!----><!----></main> <footer class="app-footer"><div class="footer-content"><span>© 2025 AxelBase Dockerfile Syntax Validator</span> <div><a href="../../privacy">Privacy Policy</a> <a href="../../terms">Terms &amp; Conditions</a></div></div></footer></div><!----><!--]--> <!--[!--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_19kqhf4 = {
+						base: new URL("../..", location).pathname.slice(0, -1),
+						assets: "/dockerfile-validator"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.By4aftQ3.js"),
+						import("../../_app/immutable/entry/app.wvYwJYw7.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 7],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+		<!-- BOOTSTRAP JS -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>

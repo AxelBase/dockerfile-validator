@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>AxelBase – Dockerfile Syntax Validator</title>
+		<link rel="icon" href="../../AxelLab-Logo.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link href="../../_app/immutable/assets/0.D2goa7eI.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/8.C26EimiD.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.By4aftQ3.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/dmZfI2NX.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/JSsAqExA.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/COTc1eVh.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/DGd0bTLZ.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/COmin_7v.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.wvYwJYw7.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/DsnmJJEf.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/dbL-Cg0J.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/BNJALzHz.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.DqAqwQkH.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/B9hXjthg.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CgWPZEOT.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/8.B1YCzPAM.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/DclLNup3.js"><!--[--><meta name="robots" content="index, follow"/> <meta name="description" content="Understand the real-time syntax checking process of AxelBase’s Dockerfile validation."/><!--]--><title>How Link Validation Works - AxelBase Blog</title>
+		<!-- BOOTSTRAP 5.3.3 CDN -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+			rel="stylesheet"
+		/>
+		<!-- CUSTOM APP STYLES are now imported in +layout.svelte -->
+	</head>
+	<body data-sveltekit-preload-data="hover" data-bs-theme="dark">
+		<div style="display: contents"><!--[--><!--[--><!----><div class="app-container"><header class="app-header"><div class="navbar-content"><div class="brand-container"><a href="../../" aria-label="Home"><img src="../../AxelLab-Logo.ico" alt="AxelBase Logo" class="brand-logo"/></a> <a class="brand-name" href="../../">AxelBase</a> <div class="bmac-container"><button class="bmac-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.35,22.2L12,22A10,10,0,0,1,2,12V10A2,2,0,0,1,4,8H7.2A5.13,5.13,0,0,1,12,3A5.13,5.13,0,0,1,16.8,8H20A2,2,0,0,1,22,10V12A10,10,0,0,1,12.35,22.2M4,10V12A8,8,0,0,0,12,20A8,8,0,0,0,20,12V10H16.8A5.11,5.11,0,0,1,12.5,5.12A5.15,5.15,0,0,1,7.2,10H4Z"></path></svg> Buy me a coffee</button> <!--[!--><!--]--></div></div> <nav><ul class="nav-links"><li><a class="nav-link" href="../../">Home</a></li> <li><a class="nav-link" href="../../#about">About</a></li> <li><a class="nav-link" href="../../#how-to-use">How to use</a></li> <li><a class="nav-link" href="../../#faq">FAQ</a></li> <li><a class="nav-link" href="../../blog">Blog</a></li></ul></nav></div></header> <main class="main-content"><!----><div class="container py-5 main-content"><h1 class="display-4 text-center mb-4">How Link Validation Works</h1> <p class="lead text-secondary-text text-center mb-5">Understand the real-time syntax checking process behind AxelBase.</p> <p>AxelBase’s validation process is designed to operate in real-time, providing immediate feedback as you edit your Dockerfile. This capability stems from a sophisticated engine that parses each line of code as it’s entered, breaking it into tokens for detailed analysis. For example, when you type `FROM node:18`, the tool verifies that `node:18` is a valid image name by cross-referencing it against known Docker Hub repositories. If an invalid entry like `FROM invalid-image` is detected, AxelBase instantly flags it with a red alert and a specific error message, such as “Image not found,” enabling quick correction.</p> <p>The validation workflow relies on a state machine to maintain context across multiple lines, ensuring complex instructions are evaluated correctly. For instance, a multi-line `RUN` command with unclosed quotes, like `RUN echo "test`, is identified and highlighted before it causes a build failure. The engine uses a combination of regular expressions and predefined rules based on Docker’s official documentation to check syntax, covering aspects like command order, argument validity, and structural integrity. This real-time analysis saves developers countless hours compared to traditional post-build debugging.</p> <h2 class="mt-4">Step-by-Step Validation Process</h2> <ol class="list-group list-group-numbered"><li class="list-group-item bg-dark-surface border-custom svelte-1li990r">Tokenize the input to isolate commands and arguments.</li> <li class="list-group-item bg-dark-surface border-custom svelte-1li990r">Validate each token against Docker syntax rules.</li> <li class="list-group-item bg-dark-surface border-custom svelte-1li990r">Track state to handle multi-line instructions.</li> <li class="list-group-item bg-dark-surface border-custom svelte-1li990r">Display results with color-coded feedback (green for valid, red for errors).</li></ol> <h2 class="mt-4">Performance Optimization</h2> <p>To handle large Dockerfiles efficiently, AxelBase incorporates lazy loading and incremental parsing. This means only the changed or newly added lines are re-evaluated, reducing computational overhead. The tool also caches validation results for unchanged sections, further enhancing speed. This optimization ensures that even files with hundreds of lines remain responsive, making AxelBase suitable for enterprise-level projects.</p> <p>The combination of real-time feedback and performance tuning makes AxelBase a powerful ally for developers. By understanding this process, you can leverage the tool to its full potential, catching errors early and building more reliable Docker images. Whether you’re a solo developer or part of a large team, this validation approach streamlines your workflow and boosts confidence in your code.</p> <p class="mt-4"><a href="../../blog" class="btn btn-outline-primary">Back to Blog</a></p></div><!----><!----></main> <footer class="app-footer"><div class="footer-content"><span>© 2025 AxelBase Dockerfile Syntax Validator</span> <div><a href="../../privacy">Privacy Policy</a> <a href="../../terms">Terms &amp; Conditions</a></div></div></footer></div><!----><!--]--> <!--[!--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_19kqhf4 = {
+						base: new URL("../..", location).pathname.slice(0, -1),
+						assets: "/dockerfile-validator"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.By4aftQ3.js"),
+						import("../../_app/immutable/entry/app.wvYwJYw7.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 8],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+		<!-- BOOTSTRAP JS -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<script>
+    import { base } from '$app/paths';
+</script>
+
+<svelte:head>
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Explore how AxelBase performs client-side Dockerfile validation for privacy and speed." />
+    <title>Client-Side Validation - AxelBase Blog</title>
+</svelte:head>
+
+<div class="container py-5 main-content">
+    <h1 class="display-4 text-center mb-4">Client-Side Validation</h1>
+    <p class="lead text-secondary-text text-center mb-5">How AxelBase validates Dockerfiles locally for privacy and performance.</p>
+
+    <p>AxelBase revolutionizes Dockerfile validation by performing all processing client-side within your browser, leveraging JavaScript to ensure both privacy and efficiency. Unlike traditional tools that require uploading code to a server, AxelBase keeps your Dockerfile data local, eliminating the risk of exposure. This approach begins with a sophisticated validation engine that parses each line as you type, checking for syntax errors and compliance with Docker’s specifications. For instance, when you enter `FROM node:18`, the tool verifies the image’s existence against known repositories, flagging any discrepancies instantly with a detailed error message.</p>
+
+    <p>The validation process starts with tokenization, where the Dockerfile is broken into individual components for analysis. This allows AxelBase to detect issues like unclosed quotes in commands such as `CMD ["node"`, providing real-time feedback to prevent build failures. The engine employs a state machine to maintain context, ensuring that multi-line instructions are evaluated correctly. Performance is a key focus, with optimizations like lazy loading and efficient parsing, enabling the tool to handle large Dockerfiles without lag. This local execution reduces dependency on internet connectivity, making it ideal for developers working in varied environments.</p>
+
+    <h2 class="mt-4">Technical Insights</h2>
+    <p>The underlying parser uses regular expressions and a finite state machine to validate syntax against Docker’s official documentation. It checks for common pitfalls, such as invalid `RUN` commands or misplaced arguments, and provides actionable suggestions. For example, a malformed `EXPOSE 3000a` would trigger an error, guiding you to correct it to `EXPOSE 3000`. This real-time feedback loop accelerates development by catching issues before they escalate.</p>
+
+    <h2 class="mt-4">Advantages of Client-Side Validation</h2>
+    <ul class="list-group">
+        <li class="list-group-item bg-dark-surface border-custom">Enhanced privacy—your code never leaves your device.</li>
+        <li class="list-group-item bg-dark-surface border-custom">Faster feedback loops, improving productivity.</li>
+        <li class="list-group-item bg-dark-surface border-custom">Offline usability, perfect for remote or unstable networks.</li>
+        <li class="list-group-item bg-dark-surface border-custom">Reduced server costs, benefiting both users and developers.</li>
+    </ul>
+
+    <p>This client-side architecture sets AxelBase apart from online validators, offering a secure and responsive experience. Whether you’re debugging a complex Dockerfile or ensuring compliance, AxelBase’s local validation provides peace of mind and efficiency, making it a must-have tool for modern development workflows.</p>
+
+    <p class="mt-4"><a href="{base}/blog" class="btn btn-outline-primary">Back to Blog</a></p>
+</div>
+
+<style>
+    .list-group-item {
+        color: var(--primary-text);
+    }
+</style>

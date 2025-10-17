@@ -1,0 +1,35 @@
+{
+	"/": [
+		"src/routes/+page.js"
+	],
+	"/blog": [
+		"src/routes/blog/+page.js"
+	],
+	"/blog/posts/post1": [
+		"src/routes/blog/posts/post1/+page.js"
+	],
+	"/blog/posts/post2": [
+		"src/routes/blog/posts/post2/+page.js"
+	],
+	"/blog/posts/post3": [
+		"src/routes/blog/posts/post3/+page.js"
+	],
+	"/blog/posts/post4": [
+		"src/routes/blog/posts/post4/+page.js"
+	],
+	"/blog/posts/post5": [
+		"src/routes/blog/posts/post5/+page.js"
+	],
+	"/blog/posts/post6": [
+		"src/routes/blog/posts/post6/+page.js"
+	],
+	"/blog/posts/post7": [
+		"src/routes/blog/posts/post7/+page.js"
+	],
+	"/privacy": [
+		"src/routes/privacy/+page.js"
+	],
+	"/terms": [
+		"src/routes/terms/+page.js"
+	]
+}
